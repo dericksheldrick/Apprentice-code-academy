@@ -1,0 +1,32 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+.navigation {
+  background-color: rgb(28, 39, 39);
+  color: whitesmoke;
+  display: block;
+  height: 40px;
+  text-align: center;
+  padding: 5px;
+}
+section {
+  display: flex;
+  flex-direction: row;
+}
+.main {
+  background-color: aquamarine;
+  width: 80%;
+  height: 500px;
+  margin: 10px;
+}
+aside {
+  background-color: rgb(176, 209, 238);
+  width: 20%;
+  height: 500px;
+  margin: 10px;
+}

@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --main_radius: 5px;
+  --main_padding: 5px;
+}
+body {
+  background-color: white;
+}
+.grid-container {
+  margin: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 0.8fr 1.6fr;
+  grid-template-areas:
+    "nav nav nav"
+    "aside main main"
+    "aside main main";
+  background-color: white;
+  height: 100vh;
+  row-gap: 5px;
+  column-gap: 6px;
+  text-align: center;
+  color: rgb(107, 110, 112);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.grid-item1 {
+  background-color: aqua;
+  grid-area: nav;
+  border-radius: var(--main_radius);
+  padding-top: var(--main_padding);
+}
+.grid-item2 {
+  background-color: aquamarine;
+  grid-area: aside;
+  border-radius: var(--main_radius);
+  padding-top: var(--main_padding);
+}
+
+.grid-item3 {
+  background-color: rgb(11, 85, 85);
+  grid-area: main;
+  border-radius: var(--main_radius);
+  padding-top: var(--main_padding);
+}
+
+@media screen and (max-width: 600px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 0.6fr 1fr;
+    grid-template-areas:
+      "nav"
+      "aside"
+      "main";
+  }
+}

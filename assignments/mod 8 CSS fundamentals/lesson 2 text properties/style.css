@@ -1,0 +1,21 @@
+h1 {
+  font-size: 30px;
+  font-weight: 600;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.para1 {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  text-align: justify;
+  text-transform: capitalize;
+}
+a {
+  color: red;
+  text-decoration: underline;
+}
+.para2 {
+  text-transform: uppercase;
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 10px;
+}

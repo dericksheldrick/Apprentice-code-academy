@@ -1,0 +1,19 @@
+body {
+  background-color: white;
+}
+header {
+  background-color: #1ecbe1;
+}
+h1 {
+  color: white;
+}
+.conclusion h2 {
+  color: hsl(3, 30, 5);
+}
+
+.specs {
+  color: #e1341e;
+}
+.conclusion {
+  color: rgb(77, 250, 10);
+}
