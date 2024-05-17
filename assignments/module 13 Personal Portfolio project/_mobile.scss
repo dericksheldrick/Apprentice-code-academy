@@ -3,6 +3,10 @@ $secondary_color: black;
 $component_color: rgb(13, 55, 240);
 
 @media (max-width: 450px) {
+  body {
+    margin: 0 8px;
+    font-size: 16px;
+  }
   .nav {
     height: 56px;
   }
@@ -63,31 +67,77 @@ $component_color: rgb(13, 55, 240);
     left: 0;
     z-index: 6;
   }
-  .title {
+  .hero .title {
     display: flex;
+    align-items: center;
+    padding: 18px;
     flex-direction: column-reverse;
 
     .title_section {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       justify-content: center;
       align-content: center;
+      width: auto;
     }
     .skillset {
       display: flex;
       flex-direction: row;
       justify-content: center;
     }
+    img {
+      width: 60%;
+      height: auto;
+      padding: 24px;
+      object-fit: cover;
+      margin: 20px;
+    }
+    h1 {
+      justify-content: center;
+      display: block;
+    }
   }
   .About {
-    display: block;
-    // flex-direction: column;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     margin: 18px;
+    width: 450px;
 
-    .title {
+    img.about_pics {
+      width: auto;
+      margin: 0px;
+    }
+  }
+
+  .title {
+    display: flex;
+    flex-direction: row;
+    padding: 8px;
+
+    h1 {
+      flex-direction: row;
+      text-align: center;
+      flex-wrap: nowrap;
+    }
+    p {
+      padding: 18px;
+    }
+  }
+  .projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    projects_cards {
       display: flex;
       flex-direction: column;
+
+      project_detais {
+        display: flex;
+        flex-direction: row;
+      }
     }
   }
 }

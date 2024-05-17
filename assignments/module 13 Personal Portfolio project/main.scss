@@ -120,9 +120,9 @@ body {
 }
 .About {
   display: flex;
-  flex-direction: row;
+  // flex-direction: column;
   justify-content: center;
-  margin: 36px;
+  // margin: 36px;
 
   img {
     width: 350px;
@@ -130,8 +130,9 @@ body {
     object-fit: cover;
     margin-right: 36px;
     border-radius: 20px;
-    // border: 1px solid $component_color;
+    border: 1px solid $component_color;
   }
+
   .title {
     display: block;
     align-items: center;
@@ -148,7 +149,7 @@ body {
     p {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-end;
       line-height: 2em;
       padding: 18px;
       text-align: justify;
@@ -181,7 +182,7 @@ body {
   display: flex;
   flex-direction: rows;
   padding-bottom: 36px;
-  margin: 0 36px;
+  // margin: 0 36px;
 
   .project_details {
     margin: 0 $mainsize;
