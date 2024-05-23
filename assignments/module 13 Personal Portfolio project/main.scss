@@ -8,14 +8,39 @@ $mainsize: 24px;
 // Imports
 @import "mobile";
 
+// Mixins
+@mixin projects_details {
+  margin: 0 $mainsize;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  padding: 10px;
+  height: 300px;
+  width: 100%;
+}
+
+@mixin project_card {
+  // display: grid;
+  justify-content: center;
+}
+
 // main css
 * {
   margin: 0px;
   padding: 0px;
 }
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
 body {
   background-color: $primary_color;
-  margin: 0 68px;
+  // margin: 0 68px;
 }
 .nav {
   display: flex;
@@ -78,51 +103,51 @@ body {
     display: flex;
     align-items: center;
     padding: 18px;
-  }
 
-  h1 {
-    font-size: $headersize;
-    padding-bottom: $mainsize;
-    color: $component_color;
-  }
-  p {
-    padding-bottom: $mainsize;
-    text-align: center;
-    line-height: 2em;
-    max-width: 400px;
-  }
-  .title_section {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    margin-right: 180px;
-    margin-left: 20px;
-    width: 50%;
-  }
-  img {
-    height: 400px;
-    width: 300px;
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 10px;
-    // margin-right: 0px;
-  }
-  .skillset {
-    padding: $mainsize;
-    font-size: $mainsize;
+    .title_section {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      // margin-right: 180px;
+      // margin-left: 20px;
+      // width: 50%;
 
-    .fa-brands {
-      padding-left: $mainsize;
-      color: $component_color;
+      p {
+        padding-bottom: $mainsize;
+        text-align: center;
+        line-height: 2em;
+        max-width: 400px;
+      }
+
+      h1 {
+        font-size: $headersize;
+        padding-bottom: $mainsize;
+        color: $component_color;
+      }
+    }
+    img {
+      height: 400px;
+      width: 300px;
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 10px;
+      // margin-right: 0px;
+    }
+    .skillset {
+      padding: $mainsize;
+      font-size: $mainsize;
+
+      .fa-brands {
+        padding-left: $mainsize;
+        color: $component_color;
+      }
     }
   }
 }
 .About {
   display: flex;
-  // flex-direction: column;
   justify-content: center;
-  // margin: 36px;
 
   img {
     width: 350px;
@@ -136,7 +161,7 @@ body {
   .title {
     display: block;
     align-items: center;
-    padding: $mainsize;
+    padding: 8px;
 
     h1 {
       font-size: $headersize;
@@ -156,69 +181,101 @@ body {
     }
   }
 }
-// .projects {
-.title {
-  display: block;
-  align-items: center;
-  // padding: $mainsize;
+.projects {
+  display: flex;
+  justify-content: center;
 
-  h1 {
-    font-size: $headersize;
-    color: $component_color;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    margin-bottom: 18px;
-  }
-  p {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    padding-bottom: 36px;
+  .title {
+    display: block;
+    align-items: center;
+    margin: 18px 68px;
+    // padding: $mainsize;
+
+    h1 {
+      font-size: $headersize;
+      color: $component_color;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      margin-bottom: 18px;
+    }
+    p {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      padding-bottom: 36px;
+    }
   }
 }
 .projects_cards {
-  display: flex;
-  flex-direction: rows;
-  padding-bottom: 36px;
-  // margin: 0 36px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  // grid-template-areas:
+  //   "card1 card2 card3 card4"
+  //   "card1 card2 card3 card4"
+  //   "card1 card2 card3 card4"
+  //   "card1 card2 card3 card4";
+  grid-column-gap: 10px;
 
-  .project_details {
-    margin: 0 $mainsize;
-    border: 1px solid #ccc;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-    border-radius: 20px;
-    padding: 10px;
-    width: 25%;
+  .project {
+    @include projects_details;
+    height: auto;
+
+    img {
+      width: 100%;
+      max-width: 100%;
+      height: 100px;
+      border-radius: 10px;
+      // object-fit: cover;
+    }
+    h3 {
+      color: $component_color;
+      padding-bottom: 16px;
+    }
+    .project_content {
+      max-width: 100%;
+
+      p {
+        line-height: 1.5em;
+        text-align: justify;
+        padding-bottom: 24px;
+      }
+    }
   }
-  img {
-    width: 220px;
-    height: 100px;
-    // object-fit: cover;
-  }
-  h3 {
-    color: $component_color;
-    padding-bottom: 16px;
-  }
-  p {
-    line-height: 1.5em;
-    text-align: justify;
-    padding-bottom: 24px;
-  }
+  // .project2 {
+  //   grid-area: card2;
+  //   @include projects_details;
+  // }
+  // .project3 {
+  //   grid-area: card3;
+  //   @include projects_details;
+  // }
+  // .project4 {
+  //   grid-area: card4;
+  //   @include projects_details;
+
   .btn {
     border-radius: 20px;
     background-color: $component_color;
     padding: 10px;
     color: $primary_color;
+    margin: 18px 0;
   }
   a {
     text-decoration: none;
   }
 }
+// @media (min-width: 780px) {
+//   .projects_cards {
+//     display: flex;
+//     gap: 18px;
+//   }
 // }
 .footer {
   margin-top: 36px;
+  width: 100%;
 
   span {
     color: $secondary_color;
@@ -226,8 +283,7 @@ body {
   .socials {
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-top: 0px;
+    padding: 18px;
 
     .fa-brands {
       padding-left: 50px;
@@ -244,7 +300,6 @@ body {
     a {
       text-decoration: none;
       color: $secondary_color;
-      font-size: 20px;
     }
   }
   .copyright {
@@ -252,9 +307,15 @@ body {
     justify-content: center;
     align-items: center;
     padding: 24px;
+    background-color: rgb(87, 85, 85);
 
     p {
-      font-size: 18px;
+      font-size: 8px;
+      color: $primary_color;
+    }
+    hr {
+      margin-top: 24px;
+      width: 100%;
     }
     .scroll-to-top {
       position: fixed;
