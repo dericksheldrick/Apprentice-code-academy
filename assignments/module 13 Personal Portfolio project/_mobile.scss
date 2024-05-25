@@ -10,7 +10,8 @@ $component_color: rgb(13, 55, 240);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   border-radius: 20px;
   padding: 10px;
-  width: 250px;
+  width: 240px;
+  // height: auto;
 }
 
 @mixin project_card {
@@ -170,55 +171,43 @@ $component_color: rgb(13, 55, 240);
     }
   }
   .projects_cards {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-
-    grid-column-gap: 10px;
-
-    .project {
+    display: flex;
+    flex-wrap: wrap;
+    .project .project2 .project3 {
       @include projectm_details;
-
-      img {
-        width: 100%;
-        max-width: 100%;
-        height: 100px;
-        border-radius: 10px;
-        // object-fit: cover;
-      }
-      h3 {
-        color: $component_color;
-        padding-bottom: 16px;
-      }
-      .project_content {
-        max-width: 100%;
-
-        p {
-          line-height: 1.5em;
-          text-align: justify;
-          padding-bottom: 24px;
-        }
-      }
-    }
-
-    img {
-      width: 100%;
-      height: auto;
-      max-height: 130px;
-      border-radius: 10px;
     }
   }
-  .socials {
-    display: flex;
-    flex-direction: column;
+  h3 {
+    color: $component_color;
+    padding-bottom: 16px;
+  }
+  .project_content {
+    max-width: 100%;
 
-    a {
-      font-size: 10px;
+    p {
+      line-height: 1.5em;
+      text-align: justify;
+      padding-bottom: 24px;
     }
-    .copyright {
-      p {
-        font-size: 8px;
-      }
+  }
+}
+
+img {
+  width: 100%;
+  height: auto;
+  max-height: 130px;
+  border-radius: 10px;
+}
+.socials {
+  display: flex;
+  flex-direction: column;
+
+  a {
+    font-size: 10px;
+  }
+  .copyright {
+    p {
+      font-size: 8px;
     }
   }
 }

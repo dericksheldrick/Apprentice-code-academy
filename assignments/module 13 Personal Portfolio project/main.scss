@@ -10,13 +10,13 @@ $mainsize: 24px;
 
 // Mixins
 @mixin projects_details {
-  margin: 0 $mainsize;
+  // margin: 0 $mainsize;
   border: 1px solid #ccc;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   border-radius: 20px;
-  padding: 10px;
-  height: 300px;
-  width: 100%;
+  padding: 14px;
+  height: auto;
+  // width: 33.33%;
 }
 
 @mixin project_card {
@@ -25,6 +25,7 @@ $mainsize: 24px;
 }
 
 // main css
+
 * {
   margin: 0px;
   padding: 0px;
@@ -209,70 +210,55 @@ body {
   }
 }
 .projects_cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto;
-  // grid-template-areas:
-  //   "card1 card2 card3 card4"
-  //   "card1 card2 card3 card4"
-  //   "card1 card2 card3 card4"
-  //   "card1 card2 card3 card4";
-  grid-column-gap: 10px;
+  display: flex;
+  flex-flow: row wrap;
+  margin: 18px 32px;
+  gap: 16px;
 
-  .project {
+  .project,
+  .project2,
+  .project3 {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     @include projects_details;
-    height: auto;
-
-    img {
-      width: 100%;
-      max-width: 100%;
-      height: 100px;
-      border-radius: 10px;
-      // object-fit: cover;
-    }
-    h3 {
-      color: $component_color;
-      padding-bottom: 16px;
-    }
-    .project_content {
-      max-width: 100%;
-
-      p {
-        line-height: 1.5em;
-        text-align: justify;
-        padding-bottom: 24px;
-      }
+    min-height: 250px;
+    flex: 1 1 100%;
+  }
+  .project {
+    background-image: url("https://bpo.technobraingroup.com/wp-content/uploads/2019/12/contact-center-man-413x408.jpg");
+  }
+  .project2 {
+    background-image: url("https://www.learnreligions.com/thmb/i5bkt8-GvcC3i0lKH0bipUFPyts=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/ChurchDefinition-59a81a6bee344fc7ada3f75589a1f183.jpg");
+  }
+  .project3 {
+    background-image: url("https://img.freepik.com/premium-photo/portrait-successful-programmer-game-developer-coder-guy-uses-computer-laptop-work-game-design-hacker-boy-generative-ai_117038-5477.jpg?w=740");
+    object-fit: cover;
+  }
+  @media (min-width: 768px) {
+    .project,
+    .project2,
+    .project3 {
+      flex: 1 1 20%;
     }
   }
-  // .project2 {
-  //   grid-area: card2;
-  //   @include projects_details;
-  // }
-  // .project3 {
-  //   grid-area: card3;
-  //   @include projects_details;
-  // }
-  // .project4 {
-  //   grid-area: card4;
-  //   @include projects_details;
-
-  .btn {
-    border-radius: 20px;
-    background-color: $component_color;
-    padding: 10px;
-    color: $primary_color;
-    margin: 18px 0;
-  }
-  a {
-    text-decoration: none;
-  }
+  color: $component_color;
+  padding-bottom: 16px;
 }
-// @media (min-width: 780px) {
-//   .projects_cards {
-//     display: flex;
-//     gap: 18px;
-//   }
-// }
+.btn {
+  margin-top: 240px;
+  position: relative;
+  bottom: 0;
+  border-radius: 20px;
+  background-color: $component_color;
+  padding: 10px;
+  color: $primary_color;
+  margin: 18px 0;
+}
+a {
+  text-decoration: none;
+}
+
 .footer {
   margin-top: 36px;
   width: 100%;
