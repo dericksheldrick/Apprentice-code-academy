@@ -4,24 +4,24 @@ $secondary_color: black;
 $component_color: rgb(13, 55, 240);
 $headersize: 36px;
 $mainsize: 24px;
-
-// Imports
-@import "mobile";
+$mobile: 500px;
+$tablet: 768px;
+$laptop: 1024px;
 
 // Mixins
 @mixin projects_details {
-  // margin: 0 $mainsize;
   border: 1px solid #ccc;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   border-radius: 20px;
-  padding: 14px;
+  padding: 8px;
   height: auto;
-  // width: 33.33%;
 }
 
 @mixin project_card {
-  // display: grid;
   justify-content: center;
+}
+@mixin position {
+  background-color: rgb(13, 55, 240, 0.5);
 }
 
 // main css
@@ -51,9 +51,20 @@ body {
   color: $secondary_color;
   height: 56px;
   padding: 0 8px;
+  margin: 0 36px;
+
+  @media (max-width: $mobile) {
+    display: none;
+  }
 
   .logo {
     margin: auto;
+    color: $secondary_color;
+
+    span {
+      font-size: 48px;
+      color: $component_color;
+    }
   }
 
   .nav_left {
@@ -98,33 +109,103 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: 36px 0;
+  margin: 36px;
+
+  @media (max-width: $tablet) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 18px;
+  }
+
+  @media (max-width: $mobile) {
+    display: flex;
+    align-items: center;
+    padding: 0px;
+    margin: 0 18px;
+    flex-direction: column-reverse;
+  }
 
   .title {
     display: flex;
     align-items: center;
-    padding: 18px;
+    gap: 10rem;
+
+    @media (max-width: $tablet) {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    @media (max-width: $mobile) {
+      display: flex;
+      align-items: center;
+      flex-direction: column-reverse;
+      padding: 0px;
+      gap: 2rem;
+    }
 
     .title_section {
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
+      justify-content: center;
       align-items: center;
-      // margin-right: 180px;
-      // margin-left: 20px;
-      // width: 50%;
+      max-width: 50rem;
+
+      @media (max-width: $mobile) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        width: 100%;
+      }
 
       p {
-        padding-bottom: $mainsize;
-        text-align: center;
+        display: flex;
+        padding: 8px 8px $mainsize 8px;
         line-height: 2em;
-        max-width: 400px;
+        max-width: 700px;
+
+        @media (max-width: $tablet) {
+          line-height: 1.5em;
+          padding: 18px;
+        }
+
+        @media (max-width: $mobile) {
+          padding: 8px;
+        }
       }
 
       h1 {
-        font-size: $headersize;
-        padding-bottom: $mainsize;
+        font-size: 3.8em;
+        padding-bottom: 8px;
         color: $component_color;
+
+        @media (max-width: $laptop) {
+          font-size: 2.8em;
+        }
+
+        @media (max-width: $tablet) {
+          font-size: 1.8em;
+          align-items: center;
+        }
+
+        img {
+          width: 60px;
+          height: 60px;
+          padding: 5px;
+          margin-bottom: 0px;
+
+          @media (max-width: $mobile) {
+            width: 30px;
+            height: 30px;
+          }
+        }
+
+        @media (max-width: $mobile) {
+          font-size: 20px;
+          padding: 8px;
+        }
       }
     }
     img {
@@ -132,131 +213,438 @@ body {
       width: 300px;
       display: flex;
       justify-content: flex-end;
-      margin-right: 10px;
-      // margin-right: 0px;
-    }
-    .skillset {
-      padding: $mainsize;
-      font-size: $mainsize;
+      object-fit: cover;
+      margin-bottom: 36px;
 
-      .fa-brands {
-        padding-left: $mainsize;
+      @media (max-width: $mobile) {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: auto;
+        margin: 0px;
+      }
+    }
+    .connect {
+      display: flex;
+      font-size: 40px;
+
+      @media (max-width: $mobile) {
+        font-size: 20px;
+      }
+
+      .fa-brands,
+      .fa-solid {
+        padding: 28px;
         color: $component_color;
+        font-size: 40px;
+
+        @media (max-width: $tablet) {
+          padding: 18px;
+          font-size: 30px;
+        }
+
+        @media (max-width: $mobile) {
+          font-size: 20px;
+        }
+      }
+
+      @media (max-width: $mobile) {
+        display: flex;
+        padding: 18px;
+        font-size: 18px;
+        flex-wrap: nowrap;
+        justify-content: center;
       }
     }
   }
 }
 .About {
   display: flex;
+  gap: 5rem;
   justify-content: center;
+  margin: 0 36px 36px 0;
+
+  @media (max-width: $tablet) {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin: 0 18px;
+  }
+
+  @media (max-width: $mobile) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 8px 18px;
+  }
 
   img {
-    width: 350px;
-    height: 400px;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    max-height: 450px;
     object-fit: cover;
-    margin-right: 36px;
+    margin: 8px 18px;
     border-radius: 20px;
-    border: 1px solid $component_color;
+    // border: 1px solid $component_color;
+
+    @media (max-width: $tablet) {
+      width: 350px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 1px solid #0d37f0;
+    }
+
+    @media (max-width: $mobile) {
+      width: 100%;
+      height: auto;
+      margin: 0px;
+      object-fit: cover;
+    }
   }
 
   .title {
     display: block;
     align-items: center;
     padding: 8px;
+    max-width: 30rem;
 
     h1 {
-      font-size: $headersize;
+      font-size: 36px;
+      padding: 5px 18px;
       color: $component_color;
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       align-content: center;
-      margin-bottom: 18px;
     }
     p {
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
       line-height: 2em;
-      padding: 18px;
+      padding: 5px 18px;
       text-align: justify;
     }
+    .more {
+      display: flex;
+      gap: 30px;
+      padding: 20px 18px;
+
+      @media (max-width: $tablet) {
+        gap: 20px;
+        padding: 15px 18px;
+      }
+
+      @media (max-width: $mobile) {
+        gap: 20px;
+      }
+
+      .more-header {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        font-size: 18px;
+        background-color: $component_color;
+        color: $primary_color;
+        border-radius: 20px;
+        cursor: pointer;
+
+        @media (max-width: $tablet) {
+          font-size: 14px;
+        }
+
+        @media (max-width: $mobile) {
+          font-size: 10px;
+        }
+      }
+      .more-checkedbox {
+        display: none;
+      }
+      .more-checkedbox:checked + .more-header + .more-content {
+        display: block;
+      }
+      .more-content {
+        display: none;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #ffffff;
+
+        ul {
+          list-style-type: none;
+          padding: 0;
+        }
+      }
+    }
   }
 }
-.projects {
+
+h1 {
+  font-size: $headersize;
+  color: $component_color;
   display: flex;
   justify-content: center;
+  align-content: center;
+  // margin-bottom: 18px;
 
-  .title {
-    display: block;
-    align-items: center;
-    margin: 18px 68px;
-    // padding: $mainsize;
+  @media (max-width: $tablet) {
+    font-size: 30px;
+  }
 
-    h1 {
-      font-size: $headersize;
-      color: $component_color;
-      display: flex;
-      justify-content: center;
-      align-content: center;
-      margin-bottom: 18px;
-    }
-    p {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-      padding-bottom: 36px;
-    }
+  @media (max-width: $mobile) {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 18px;
+    margin: 5px 18px;
   }
 }
+p {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 36px;
+
+  @media (max-width: $mobile) {
+    margin: 5px 18px;
+    padding-bottom: 18px;
+  }
+}
+// }
 .projects_cards {
   display: flex;
   flex-flow: row wrap;
   margin: 18px 32px;
   gap: 16px;
 
+  @media (max-width: $tablet) {
+    margin: 18px;
+  }
+
+  @media (max-width: $mobile) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   .project,
   .project2,
   .project3 {
+    @include position;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     @include projects_details;
     min-height: 250px;
-    flex: 1 1 100%;
-  }
-  .project {
-    background-image: url("https://bpo.technobraingroup.com/wp-content/uploads/2019/12/contact-center-man-413x408.jpg");
-  }
-  .project2 {
-    background-image: url("https://www.learnreligions.com/thmb/i5bkt8-GvcC3i0lKH0bipUFPyts=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/ChurchDefinition-59a81a6bee344fc7ada3f75589a1f183.jpg");
-  }
-  .project3 {
-    background-image: url("https://img.freepik.com/premium-photo/portrait-successful-programmer-game-developer-coder-guy-uses-computer-laptop-work-game-design-hacker-boy-generative-ai_117038-5477.jpg?w=740");
-    object-fit: cover;
-  }
-  @media (min-width: 768px) {
-    .project,
-    .project2,
-    .project3 {
-      flex: 1 1 20%;
+    flex: 1 1 calc(33.333% - 32px);
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 250px;
+      border-radius: 20px;
+      object-fit: cover;
+
+      &:hover {
+        transition: 1.1s;
+      }
+    }
+
+    @media (max-width: $mobile) {
+      flex: 1 1 100%;
+    }
+    .layer {
+      background: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      text-align: center;
+      color: $primary_color;
+      border-radius: 20px;
+      min-height: 250px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+
+      h3 {
+        text-align: center;
+        padding-bottom: 18px;
+      }
+      p {
+        padding: 10px;
+      }
+      a {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        width: 100%;
+        height: 80px;
+
+        .fa-solid {
+          display: flex;
+          width: 50px;
+          height: 40px;
+          flex-direction: column;
+          justify-content: center;
+          font-size: 30px;
+          background-color: $primary_color;
+          align-items: center;
+          color: $component_color;
+          border-radius: 50%;
+        }
+      }
     }
   }
-  color: $component_color;
+  // color: $component_color;
   padding-bottom: 16px;
 }
-.btn {
-  margin-top: 240px;
-  position: relative;
-  bottom: 0;
-  border-radius: 20px;
-  background-color: $component_color;
-  padding: 10px;
-  color: $primary_color;
-  margin: 18px 0;
+.project:hover .layer,
+.project2:hover .layer,
+.project3:hover .layer {
+  opacity: 1; /* Show the layer on hover */
 }
 a {
   text-decoration: none;
+}
+#Contact {
+  background-color: $component_color;
+}
+.contact {
+  display: grid;
+  grid-template-areas:
+    "main image"
+    "main phone";
+  grid-template-columns: 1fr 1fr;
+  grid-row: 60% 40%;
+  grid-gap: 5px;
+  margin: 150px 36px 50px;
+
+  @media (max-width: $tablet) {
+    margin: 50px 36px;
+    grid-row: 50% 50%;
+    overflow: hidden;
+  }
+
+  @media (max-width: $mobile) {
+    grid-template-areas:
+      "image"
+      "main"
+      "phone";
+  }
+
+  .main {
+    grid-area: main;
+    padding: 18px;
+    border-radius: 10px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.8);
+    width: 100%;
+    background-color: $primary_color;
+    // margin-left: 30px;
+
+    .title {
+      color: $component_color;
+      padding: 12px;
+      font-size: 16px;
+    }
+    p {
+      line-height: 1.8em;
+      word-spacing: 5px;
+      padding: 12px;
+    }
+    hr {
+      opacity: 0.4;
+      width: 80%;
+      margin: 24px;
+    }
+    h1 {
+      padding: 12px;
+      word-spacing: 5px;
+      font-size: 24px;
+    }
+    form {
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      textarea {
+        // width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+        opacity: 0.2;
+        color: #ccc;
+      }
+
+      input[type="radio"] {
+        vertical-align: middle;
+        margin-right: 5px;
+      }
+
+      input[type="submit"] {
+        padding: 10px 20px;
+        background-color: $component_color;
+        color: $primary_color;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer; /* Change cursor to pointer on hover */
+        transition: background-color 0.3s;
+        &:hover {
+          background-color: $component_color;
+        }
+      }
+    }
+  }
+  .image {
+    grid-area: image;
+    border-radius: 10px;
+    box-shadow: 0 2px 18px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    // margin-left: 30px;
+    object-fit: cover;
+    justify-content: center;
+    align-content: center;
+
+    img {
+      width: auto;
+      height: auto;
+      //   padding: 10px;
+    }
+  }
+  .phone {
+    grid-area: phone;
+    border-radius: 10px;
+    box-shadow: 0 2px 2px rgba(42, 12, 179, 0.5);
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+    background-color: $primary_color;
+    // margin-right: 30px;
+
+    a {
+      display: flex;
+      justify-content: row;
+      padding: 20px;
+      text-decoration: none;
+      color: $secondary_color;
+
+      .fa-solid {
+        color: $component_color;
+        font-size: 40px;
+        padding: 0 12px;
+      }
+    }
+  }
 }
 
 .footer {
@@ -271,21 +659,42 @@ a {
     justify-content: center;
     padding: 18px;
 
+    @media (max-width: $mobile) {
+      display: flex;
+      flex-direction: column;
+    }
+
     .fa-brands {
       padding-left: 50px;
       font-size: 24px;
       color: $component_color;
       margin-right: 10px;
+
+      @media (max-width: $mobile) {
+        padding: 0px;
+        font-size: 16px;
+      }
     }
     .fa-solid {
       padding-left: 50px;
       color: $component_color;
       font-size: 24px;
       margin-right: 10px;
+
+      @media (max-width: $mobile) {
+        padding: 0px;
+        font-size: 16px;
+      }
     }
     a {
+      display: flex;
+      flex-direction: row;
       text-decoration: none;
       color: $secondary_color;
+
+      @media (min-width: 768px) {
+        font-size: 16px;
+      }
     }
   }
   .copyright {
