@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+    <style></style>
+  </head>
+  <body>
+    <!-- The element whose text and style will be changed -->
+    <h1 id="targetElement">Try Change my style and text!</h1>
+
+    <!-- Input field for new text -->
+    <label for="newText">New Text:</label>
+    <input type="text" id="newText" /><br />
+
+    <!-- Input field for text color -->
+    <label for="textColor">Text Color:</label>
+    <input type="color" id="textColor" /><br />
+
+    <!-- Input field for font size -->
+    <label for="fontSize">Font Size (in pixels):</label>
+    <input type="number" id="fontSize" /><br />
+
+    <!-- Buttons to apply changes -->
+    <button onclick="updateText()">Update Text</button>
+    <button onclick="updateStyle()">Update Style</button>
+
+    <script src="main.js"></script>
+  </body>
+</html>
