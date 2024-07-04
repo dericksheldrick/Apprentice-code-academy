@@ -1,0 +1,52 @@
+** {
+  margin: 0;
+  padding: o;
+  /* box-sizing: border-box; */
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(8, 246, 218, 0.09);
+  /*margin: 0 16px; */
+  height: 100vh;
+}
+#container {
+  background-color: white;
+  height: auto;
+  /* width: 80%; */
+  padding: 32px;
+  border-radius: 30px;
+  justify-content: center;
+  margin: 30px 64px;
+  justify-content: center;
+}
+h1 {
+  color: rgba(3, 61, 54, 0.76);
+}
+p {
+  color: rgba(3, 61, 54, 0.76);
+  font-weight: lighter;
+}
+#todoList {
+  list-style-type: decimal;
+  padding: 0;
+}
+#todoList li {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  color: rgba(3, 61, 54, 0.76);
+}
+button {
+  border-radius: 5px;
+}
+#todoList button {
+  margin-left: 10px;
+  border-radius: 5px;
+  color: rgba(3, 61, 54, 0.76);
+}
