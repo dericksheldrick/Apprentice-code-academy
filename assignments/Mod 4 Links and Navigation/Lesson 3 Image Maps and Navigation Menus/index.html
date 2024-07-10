@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Map Example</title>
+  </head>
+  <body>
+    <h1>Image Map Example</h1>
+
+    <img
+      src="office.jpg"
+      alt="office image"
+      usemap="#example-map"
+      width="100%"
+      height="80%"
+    />
+
+    <map name="example-map">
+      <area
+        target="_blank"
+        alt="Laptop"
+        title="Laptop"
+        href="https://nairobicomputershop.co.ke/"
+        coords="1814,474,4105,953"
+        shape="rect"
+      />
+
+      <area
+        target="_blank"
+        alt="mouse"
+        title="mouse"
+        href="https://www.jumia.co.ke"
+        coords="4147,1391,271"
+        shape="circle"
+      />
+
+      <area
+        target="_blank"
+        alt="chair"
+        title="chair"
+        href="https://officemart.co.ke"
+        coords="1627,2237,2107,2357,3209,2434,3501,2664,1603,2242,2806,1696,3305,2146,3521,2568,3482,2697,3444,2736,3137,3612,990,3583,175,1111,626,877,1507,1202,2806,1701"
+        shape="poly"
+      />
+    </map>
+  </body>
+</html>

@@ -1,30 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Positioning</title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Positioning</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="Main">
-      <h1>CSS POSITIONING</h1>
-      <p>
-        Positioning is one of the crucial things to consider when it comes to
-        Web development.This document will help you understand what each example
-        and give show you some examples
-      </p>
-    </div>
-    <div class="examples">
-      <ul>
-        <li><a href="./absolute.html" target="_blank">Absolute</a></li>
-        <li><a href="./relative.html" target="_blank">Relative</a></li>
-        <li><a href="./static.html" target="_blank">static</a></li>
-        <li><a href="./sticky.html" target="_blank">sticky</a></li>
-        <li><a href="./fixed.html" target="_blank">fixed</a></li>
-      </ul>
+    <div class="container">
+      <h1>CSS Positioning Examples</h1>
+
+      <h2>Static Positioning</h2>
+      <div class="box static">
+        This box is statically positioned. It's the default position, and it
+        follows the normal document flow.
+      </div>
+
+      <h2>Relative Positioning</h2>
+      <div class="box relative">
+        This box is relatively positioned. It's positioned relative to its
+        normal position, moved by 10px down and 20px to the right.
+      </div>
+
+      <h2>Absolute Positioning</h2>
+      <div class="absolute-container">
+        <div class="box absolute">
+          This box is absolutely positioned. It's positioned relative to its
+          nearest positioned ancestor.
+        </div>
+      </div>
+
+      <h2>Fixed Positioning</h2>
+      <div class="box fixed">
+        This box is fixed. It stays in the same place even when you scroll the
+        page.
+      </div>
+
+      <h2>Sticky Positioning</h2>
+      <div class="sticky-container">
+        <div class="box sticky">
+          This box is sticky. It will stick to the top of the container as you
+          scroll down.
+        </div>
+        <p>Scroll down to see the sticky effect.</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit
+          amet erat erat. Nulla facilisi. Donec dapibus dolor ac justo
+          malesuada, eget tincidunt erat viverra.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit
+          amet erat erat. Nulla facilisi. Donec dapibus dolor ac justo
+          malesuada, eget tincidunt erat viverra.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit
+          amet erat erat. Nulla facilisi. Donec dapibus dolor ac justo
+          malesuada, eget tincidunt erat viverra.
+        </p>
+      </div>
     </div>
   </body>
 </html>

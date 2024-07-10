@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>OFF DAYS SURVEY FORM</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <header class="header">
+              <h1 id="title" class="text center">OFF DAYS SURVEY FORM</h1>
+              <p id="description" class="description text-center">Thank you for taking your time to give us this valuable feedback to help us improve our working environment</p>
+            </header>
+            <form id="survey-form">
+              <div class="form-group">
+                <label id="name-label" for="name" data-tooltip="Please enter your full name.">Name</label>
+                <input
+                       type="text"
+                       name="name"
+                       id="name"
+                       class="form-control"
+                       Placeholder="Enter your name"
+                       required
+                       />
+              </div>
+              <div class="form-group">
+                <label id="email-label" for="email" data-tooltip="Please enter your email.">Email</label>
+                <input
+                       type="email"
+                       name="email"
+                       id="email"
+                       class="form-control"
+                       placeholder= "Enter your email"
+                       required
+                       />
+                
+              </div>
+              <div class="form-group">
+                <label id="number" for="number" data-tooltip="Please enter your Age">Age<span class="clue">(optional)</span>
+                  
+                </label>
+                <input
+                       type="number"
+                       name="Age"
+                       id="number"
+                       min="18"
+                       max="99"
+                       class="form-control"
+                       placeholder="Age"
+                       required
+                       />
+              </div>
+              <div class="form-group">
+                <p>which best describe your role</p>
+                <select id="dropdown" name="role" class="form-group" required>
+                  <option disabled selected value>select current role</option>
+                  <option value="mobile">mobile</option>
+                  <option value="corporate">Corporate</option>
+                  <option value="MFS">MFS</option>
+                  <option value="All of the Above">All of the above</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <p> How many off day do you need to work effectively?</p>
+                <label>
+                  <input
+                         name="off-days"
+                         value="one"
+                         type="radio"
+                         class="input-radio"
+                         checked
+                         />One</label>
+                <label>
+                  <input
+                         name="off-days"
+                         value="Two"
+                         Type="radio"
+                         class="input-radio"
+                         />Two</label>
+              </div>
+              <div class="form-group">
+                <p>If you selected option 2, how many hours are you willing to give?</p>
+                <label>
+                  <Input
+                         name="hours"
+                         value="Eight"
+                         Type="radio"
+                         class="input=radio"
+                         Checked
+                         />Eight</label>
+                <label>
+                  <input
+                         name="hours"
+                         values="Ten"
+                         type="radio"
+                         class="input-radio"
+                         />Ten</label>
+             </div>
+              <div class="form-group">
+                <label id="favorite-label" for="favorite" data-tooltip="What i like about techno brain">What i like about techno brain;</label>
+                <textarea
+                       type="text"
+                       name="favorite"
+                       id="favorite"
+                       class="input-textarea"
+                       placeholder="TechnoBrainBPO"
+                       required></textarea>
+              </div>
+              <div class="form-group">
+                <p> which area would likes us to improve</p>
+                <label>
+                  <input
+                         name="sugestion"
+                         value="salary"
+                         type="checkbox"
+                         class="input-checkbox"
+                         checked
+                         />Salary</label>
+                <label>
+                  <input
+                         name="suggestion"
+                         value="Food"
+                         type="checkbox"
+                         class="input-checkbox"
+                         />Food</label>
+                <label>
+                  <input
+                         name="suggestion"
+                         value="dressing code"
+                         type="checkbox"
+                         class="input-checkbox"
+                         />Dressing Code</label>
+                <label>
+                  <input
+                         name="suggestion"
+                         value="Wifi connection"
+                         type="checkbox"
+                         class="input-checkbox"
+                         />Wifi connection</label>
+                </label>
+              </div>
+            <div class="form-group">
+              <p>comment</p>
+              <label>
+                <textarea
+                          name="comment"
+                          type="text"
+                          class="input textarea"
+                          placeholder="smile while leaving comment"
+                          required></textarea>
+              </label>
+              
+            </div>
+            <div class="form-group">
+              <button type="submit" id="submit" class="submit-button">submit</button>
+            </div>
+              
+            </form>
+            
+          </div>
+          <footer>&copy;BossEnterprise@2022</footer>
+    </body>
+</html>
