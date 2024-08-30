@@ -3,45 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Image Map Example</title>
+    <title>Image Map Navigation</title>
+    <style>
+      /* img {
+        max-width: 100%;
+      } */
+      h1 {
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
-    <h1>Image Map Example</h1>
+    <h1>Office Navigation</h1>
 
-    <img
-      src="office.jpg"
-      alt="office image"
-      usemap="#example-map"
-      width="100%"
-      height="80%"
-    />
+    <img src="maps.jpg" alt="Office image" usemap="#office-map" />
 
-    <map name="example-map">
+    <map name="office-map">
       <area
-        target="_blank"
-        alt="Laptop"
-        title="Laptop"
-        href="https://nairobicomputershop.co.ke/"
-        coords="1814,474,4105,953"
         shape="rect"
-      />
-
-      <area
+        coords="24,754,974,1231"
+        title="generic-smart-tv-android-wireless-keyboard-mouse-white-153409526"
         target="_blank"
-        alt="mouse"
-        title="mouse"
-        href="https://www.jumia.co.ke"
-        coords="4147,1391,271"
+        href="https://www.jumia.co.ke/generic-smart-tv-android-wireless-keyboard-mouse-white-153409526.html"
+        rel="noopener"
+      />
+      <area
         shape="circle"
+        coords="2002,751,222"
+        title="javahouseafrica"
+        target="_blank"
+        href="https://www.javahouseafrica.com/wp-content/uploads/2022/08/Java-A4-JKIA-Menu-Revised-2022-Final-7.pdf"
+        rel="noopener"
       />
 
       <area
-        target="_blank"
-        alt="chair"
-        title="chair"
-        href="https://officemart.co.ke"
-        coords="1627,2237,2107,2357,3209,2434,3501,2664,1603,2242,2806,1696,3305,2146,3521,2568,3482,2697,3444,2736,3137,3612,990,3583,175,1111,626,877,1507,1202,2806,1701"
         shape="poly"
+        coords="899,439,897,517,602,515,484,523,24,521,7,448,223,446,446,436,530,399,606,438,765,429,769,511"
+        title="men-watches"
+        target="_blank"
+        href="https://www.pablogiftshop.com/product-category/watches/men-watches/"
+        rel="noopener"
       />
     </map>
   </body>
